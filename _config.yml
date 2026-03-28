@@ -1,0 +1,51 @@
+title: jared's blog
+description: Personal blog and notes
+url: "https://blog.jared.sh"
+baseurl: ""
+
+author:
+  name: jared
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+# Relative links plugin — lets you use .md links between notes (Obsidian style)
+relative_links:
+  enabled: true
+  collections: true
+
+# Collections — notes from Obsidian can live here
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .bundle/
