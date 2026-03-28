@@ -2,7 +2,9 @@
 layout: post
 title: Why You Don't Lock In
 date: 2026-03-28
+categories: [self-improvement]
 tags:
+  - selfhelp
 ---
 
 Every year, you tell yourself, _“I am going to lock in.”_ Or at least every year since that phrase was coined. But a year passes—quicker than the last—and you still never lock in. You fall back into old habits, create some new ones, and end up as a slightly better or slightly worse version of yourself.

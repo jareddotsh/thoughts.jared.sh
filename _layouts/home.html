@@ -1,29 +1,36 @@
 ---
 layout: default
+paginate: true
 ---
 <div class="home">
   {{ content }}
 
-  {% if site.posts.size > 0 %}
-  <h2>Posts</h2>
+  {% if paginator.posts.size > 0 %}
+  <h2>Thoughts</h2>
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <li>
       <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
   </ul>
-  {% endif %}
 
-  {% if site.notes.size > 0 %}
-  <h2>Notes</h2>
-  <ul class="post-list">
-    {% for note in site.notes %}
-    <li>
-      <a href="{{ note.url | relative_url }}">{{ note.title | default: note.name }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+  <!-- Pagination -->
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="{{ '/' | relative_url }}" class="pagination-link pagination-prev">← Newer</a>
+      {% else %}
+        <a href="{{ '/page/' | relative_url }}{{ paginator.previous_page }}/" class="pagination-link pagination-prev">← Newer</a>
+      {% endif %}
+    {% endif %}
+    
+    <span class="pagination-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    
+    {% if paginator.next_page %}
+      <a href="{{ '/page/' | relative_url }}{{ paginator.next_page }}/" class="pagination-link pagination-next">Older →</a>
+    {% endif %}
+  </nav>
   {% endif %}
 </div>
