@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="note">
+  <header class="note-header">
+    <h1 class="note-title">{{ page.title | default: page.name }}</h1>
+    {% if page.tags.size > 0 %}
+    <p class="note-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+  </header>
+  <div class="note-content">
+    {{ content }}
+  </div>
+  <footer class="note-footer">
+    <a href="{{ '/' | relative_url }}">&larr; back</a>
+  </footer>
+</article>
