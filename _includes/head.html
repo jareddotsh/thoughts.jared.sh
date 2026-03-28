@@ -35,8 +35,9 @@
 			}
 
 			function syncToggle(theme) {
-				toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-				toggle.textContent = theme === "dark" ? "light mode" : "dark mode";
+					var isDark = theme === "dark";
+					toggle.setAttribute("aria-checked", isDark ? "true" : "false");
+					toggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
 			}
 
 			toggle.addEventListener("click", function () {
