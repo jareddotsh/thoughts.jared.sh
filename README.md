@@ -1,1 +1,1 @@
-# blog.jared.sh
+# thoughts.jared.sh

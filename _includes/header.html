@@ -2,9 +2,8 @@
   <nav class="site-nav">
     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <div class="nav-links">
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">dark mode</button>
       <a href="{{ '/' | relative_url }}">home</a>
-      <a href="{{ '/feed.xml' | relative_url }}">feed</a>
+      <button class="theme-toggle" type="button" data-theme-toggle role="switch" aria-checked="false" aria-label="Toggle color theme"></button>
     </div>
   </nav>
 </header>
