@@ -1,4 +1,8 @@
 <footer class="site-footer">
   <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
-  <p><a href="{{ '/feed.xml' | relative_url }}">feed</a></p>
+  <div class="footer-links">
+    {% for link in site.author.links %}
+    <a href="{{ link.url | relative_url }}" title="{{ link.title }}">{{ link.title | downcase }}</a>
+    {% endfor %}
+  </div>
 </footer>

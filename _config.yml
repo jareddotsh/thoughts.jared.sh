@@ -4,7 +4,14 @@ url: "https://thoughts.jared.sh"
 baseurl: ""
 
 author:
-  name: jared
+  name: jared.sh
+  links:
+    - title: GitHub
+      url: https://github.com/jareddotsh
+    - title: Instagram
+      url: https://instagram.com/jared.sh
+    - title: Feed
+      url: /feed.xml
 
 # Build settings
 markdown: kramdown
@@ -17,17 +24,15 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-relative-links
+  - jekyll-paginate
 
-# Relative links plugin — lets you use .md links between notes (Obsidian style)
+# Relative links plugin
 relative_links:
   enabled: true
-  collections: true
 
-# Collections — notes from Obsidian can live here
-collections:
-  notes:
-    output: true
-    permalink: /notes/:name/
+# Paginate settings
+paginate: 10
+paginate_path: /page/:num/
 
 # Defaults
 defaults:
@@ -36,16 +41,12 @@ defaults:
       type: posts
     values:
       layout: post
-  - scope:
-      path: ""
-      type: notes
-    values:
-      layout: note
 
 # Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - index.md
   - vendor/
   - .bundle/
